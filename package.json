@@ -1,0 +1,27 @@
+{
+  "name": "template-ts-express",
+  "version": "1.0.0",
+  "description": "template node express & typescript",
+  "main": "app.js",
+  "author": "Thomas Pearson",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn build && node -r dotenv/config dist/app.js",
+    "build": "babel src -d dist",
+    "restart": "rimraf dist && yarn start",
+    "dev": "nodemon --ignore client --exec yarn restart",
+    "prod": "rimraf dist && yarn build && node dist/app.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "nodemon": "^2.0.4"
+  }
+}
